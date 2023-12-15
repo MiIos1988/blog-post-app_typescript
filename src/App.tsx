@@ -1,6 +1,5 @@
 import { computeHeadingLevel, logDOM } from "@testing-library/react";
 import { useEffect, useState } from "react";
-import { Post } from "./components/Post";
 import PostLayout from "./components/PostLayout";
 import Sidebar from "./components/Sidebar";
 
@@ -10,7 +9,7 @@ function App() {
   const [postData, setPostData] = useState([]);
   const [currentTag, setCurrentTag] = useState("");
 
-  const selectTag = (tag) => {
+  const selectTag = (tag: string) => {
     setCurrentTag(tag)
   }
 
