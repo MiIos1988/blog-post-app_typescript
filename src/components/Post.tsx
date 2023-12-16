@@ -1,6 +1,15 @@
 import React from 'react'
 
-export const Post = ({ post, selectTag }) => {
+interface Post {
+    id: number;
+    title: string;
+    body: string;
+    userId: number;
+    tags: string[];
+    reactions: number;
+  }
+
+export const Post = ({ post, selectTag }: {post: Post, selectTag: (tag: string) => void;}) => {
     return (
 
         <div className='col-3 m-2' >

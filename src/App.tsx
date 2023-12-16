@@ -1,4 +1,3 @@
-import { computeHeadingLevel, logDOM } from "@testing-library/react";
 import { useEffect, useState } from "react";
 import PostLayout from "./components/PostLayout";
 import Sidebar from "./components/Sidebar";
@@ -16,7 +15,7 @@ function App() {
   useEffect(() => {
     fetch("https://raw.githubusercontent.com/zile028/fake-db/main/tags")
       .then(res => res.json())
-      .then(data => setSidebarData(data))
+      .then(data => {setSidebarData(data)})
   }, []
   );
 
