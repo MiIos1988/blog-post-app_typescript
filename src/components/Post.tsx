@@ -1,21 +1,18 @@
-import React from "react";
-
-interface Post {
+type PostProps = {
   id: number;
   title: string;
   body: string;
   userId: number;
   tags: string[];
   reactions: number;
-}
+};
 
-export const Post = ({
-  post,
-  selectTag,
-}: {
-  post: Post;
+type PostComponentProps = {
+  post: PostProps;
   selectTag: (tag: string) => void;
-}) => {
+};
+
+export const Post = ({ post, selectTag }: PostComponentProps) => {
   return (
     <div className="col-3 m-2">
       <div className="card ">

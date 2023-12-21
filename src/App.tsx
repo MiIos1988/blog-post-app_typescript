@@ -2,10 +2,19 @@ import { useEffect, useState } from "react";
 import PostLayout from "./components/PostLayout";
 import Sidebar from "./components/Sidebar";
 
+type Post = {
+  id: number;
+  title: string;
+  body: string;
+  userId: number;
+  tags: string[];
+  reactions: number;
+}
+
 function App() {
-  const [sidebarData, setSidebarData] = useState();
-  const [postData, setPostData] = useState([]);
-  const [currentTag, setCurrentTag] = useState("");
+  const [sidebarData, setSidebarData] = useState<string[]>([]);
+  const [postData, setPostData] = useState<Post[]>([]);
+  const [currentTag, setCurrentTag] = useState<string>("");
 
   const selectTag = (tag: string) => {
     setCurrentTag(tag);
